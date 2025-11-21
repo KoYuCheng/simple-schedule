@@ -1,0 +1,79 @@
+<!--<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple-scheduler</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>簡易排班系統</title>
+  <style>
+    /* 簡易 CSS 讓表格好閱讀 */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .controls {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* 點擊排班儲存格時，滑鼠圖示改變，讓使用者知道可操作 */
+    td {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>簡易排班表</h1>
+
+  <div class="controls">
+    <button id="prev-week">上一週</button>
+    <span id="current-period"></span>
+    <button id="next-week">下一週</button>
+    <button id="export-data">匯出排班 (JSON)</button>
+    <input type="file" id="import-data" accept=".json" style="display: none;">
+    <button onclick="document.getElementById('import-data').click()">匯入排班 (JSON)</button>
+  </div>
+
+  <table id="schedule-table">
+    <thead>
+      <tr>
+        <th>日期</th>
+        <th>星期</th>
+        <th>班次與人員</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
